@@ -38,10 +38,10 @@ function useLocalStorage(itemName, initialValue) {
     }
   };
 
-  const sincronizeItem = () => {
+  const sincronizeItem = ()=>{
     setLoading(true);
     setSincronizedItem(false);
-  };
+  }
 
   return {
     item,

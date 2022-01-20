@@ -1,27 +1,37 @@
-.ChangeAlert-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #1e1e1f50;
-  z-index: 2;
+.changeAlert{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+    top:0;
+    left:-24px;
+    margin: 0;
+}
+.changeAlert .changeAlert-container{
+    width: 30%;
+    min-width: 300px;
+    max-height: 500px;
+    height: 30%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.5);
 }
 
-.ChangeAlert-container {
-  position: fixed;
-  bottom: -10px;
-  left: -10px;
-  right: -10px;
-  padding: 34px;
-  background-color: #1e1e1f;
-  color: #f2f4f5;
-  z-index: 2;
-  text-align: center;
-  font-size: 20px;
-}
-
-.ChangeAlert-container button {
-  margin-top: 16px;
-  margin-bottom: 16px;
+.changeAlert .changeAlert-container button{
+    padding: 20px;
+    border: none;
+    background-color: #61DAFA;
+    border-radius: 10px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
 }

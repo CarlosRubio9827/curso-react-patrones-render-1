@@ -9,11 +9,17 @@ function TodoList(props) {
       {props.error && props.onError()}
       {props.loading && props.onLoading()}
 
-      {(!props.loading && !props.totalTodos) && props.onEmptyTodos()}
+      {(!props.loading && !props.totalTodos)  && props.onEmptyTodos()
+     // {props.onEmptyTodos() }
+      }
 
-      {(!!props.totalTodos && !props.searchedTodos.length) && props.onEmptySearchResults(props.searchText)}
+      {(!!props.totalTodos && !props.searchedTodos.length) && props.onEmptySearchResults(props.searchValue)}
 
-      {(!props.loading && !props.error) && props.searchedTodos.map(renderFunc)}
+      {(!props.loading && !props.error) && props.searchedTodos.map(props.render || props.children)}
+
+      {/* <ul>
+        {props.children}
+      </ul> */}
     </section>
   );
 }

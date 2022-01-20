@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
 
 function useStorageListener(sincronize) {
   const [storageChange, setStorageChange] = React.useState(false);
-  
-  window.addEventListener('storage', (change) => {
-    if (change.key === 'TODOS_V1') {
-      console.log('Hubo cambios en TODOS_V1');
+
+  window.addEventListener("storage", (change) => {
+    console.log(change);
+    if (change.key === "TODOS_V1") {
+      console.log("hubo cambios en TODO_V1");
       setStorageChange(true);
     }
   });
@@ -17,8 +18,8 @@ function useStorageListener(sincronize) {
 
   return {
     show: storageChange,
-    toggleShow,
-  };
+    toggleShow
+  }  
 }
 
 export { useStorageListener };

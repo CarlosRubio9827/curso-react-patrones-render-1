@@ -23,6 +23,6 @@
   outline-color: #61DAFA;
 }
 
-.TodoSearch:disabled {
+.TodoSearch:disabled{
   opacity: 25%;
 }
