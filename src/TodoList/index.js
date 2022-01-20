@@ -3,10 +3,21 @@ import './TodoList.css'
 
 function TodoList(props) {
   return (
-    <section>
-      <ul>
+    <section className="TodoList-container">
+      {props.error && props.onError()}
+      {props.loading && props.onLoading()}
+
+      {(!props.loading && !props.totalTodos)  && props.onEmptyTodos()
+     // {props.onEmptyTodos() }
+      }
+
+      {(!!props.totalTodos && !props.searchedTodos.length) && props.onEmptySearchResults(props.searchValue)}
+
+      {(!props.loading && !props.error) && props.searchedTodos.map(props.render || props.children)}
+
+      {/* <ul>
         {props.children}
-      </ul>
+      </ul> */}
     </section>
   );
 }
